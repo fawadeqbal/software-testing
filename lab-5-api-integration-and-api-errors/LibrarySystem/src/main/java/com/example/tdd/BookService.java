@@ -39,7 +39,7 @@ public class BookService {
         }
     }
 
-    public List<Book> getBooksByTitle(String author, String title) {
+    public List<Book> getBooksByAuthorAndTitle(String author, String title) {
         if ((author == null || author.isEmpty()) || (title == null || title.isEmpty())) {
             return new ArrayList<>();
         }

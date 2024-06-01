@@ -82,7 +82,7 @@ public class BookServiceTest {
 
     @Test
     public void testGetBooksByAuthorAndTitle_ValidAuthorAndTitle() {
-        List<Book> books = bookService.getBooksByTitle("Robert C. Martin", "Clean Code");
+        List<Book> books = bookService.getBooksByAuthorAndTitle("Robert C. Martin", "Clean Code");
 //        Assertions.assertEquals(0, books.size());
         Assertions.assertEquals(1, books.size());
         Assertions.assertEquals("Clean Code", books.get(0).getTitle());
@@ -90,37 +90,37 @@ public class BookServiceTest {
 
     @Test
     public void testGetBooksByAuthorAndTitle_NoBooksFound() {
-        List<Book> books = bookService.getBooksByTitle("Unknown Author", "Unknown Title");
+        List<Book> books = bookService.getBooksByAuthorAndTitle("Unknown Author", "Unknown Title");
         Assertions.assertEquals(0, books.size());
     }
 
     @Test
     public void testGetBooksByAuthorAndTitle_ValidAuthorInvalidTitle() {
-        List<Book> books = bookService.getBooksByTitle("Robert C. Martin", "Unknown Title");
+        List<Book> books = bookService.getBooksByAuthorAndTitle("Robert C. Martin", "Unknown Title");
         Assertions.assertEquals(0, books.size());
     }
 
     @Test
     public void testGetBooksByAuthorAndTitle_InvalidAuthorValidTitle() {
-        List<Book> books = bookService.getBooksByTitle("Unknown Author", "Clean Code");
+        List<Book> books = bookService.getBooksByAuthorAndTitle("Unknown Author", "Clean Code");
         Assertions.assertEquals(0, books.size());
     }
 
     @Test
     public void testGetBooksByAuthorAndTitle_NullAuthorAndTitle() {
-        List<Book> books = bookService.getBooksByTitle(null, null);
+        List<Book> books = bookService.getBooksByAuthorAndTitle(null, null);
         Assertions.assertEquals(0, books.size());
     }
 
     @Test
     public void testGetBooksByAuthorAndTitle_ValidAuthorNullTitle() {
-        List<Book> books = bookService.getBooksByTitle("Robert C. Martin", null);
+        List<Book> books = bookService.getBooksByAuthorAndTitle("Robert C. Martin", null);
         Assertions.assertEquals(0, books.size());
     }
 
     @Test
     public void testGetBooksByAuthorAndTitle_NullAuthorValidTitle() {
-        List<Book> books = bookService.getBooksByTitle(null, "Clean Code");
+        List<Book> books = bookService.getBooksByAuthorAndTitle(null, "Clean Code");
         Assertions.assertEquals(0, books.size());
     }
 }
