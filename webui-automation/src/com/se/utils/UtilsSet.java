@@ -181,6 +181,7 @@ public class UtilsSet {
         clickOnElement(by, by + " did not become clickable");
     }
 
+
     public static void clickOnElement(
             By by,
             String errorMessage
@@ -194,6 +195,8 @@ public class UtilsSet {
             Assert.fail(errorMessage, ex);
         }
     }
+
+
     private interface ITask {
         void task();
     }

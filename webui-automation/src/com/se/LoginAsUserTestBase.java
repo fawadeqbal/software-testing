@@ -1,6 +1,8 @@
 package com.se;
 
 import com.se.config.Constants.*;
+
+import com.se.config.LoginParameters;
 import io.qameta.allure.Allure;
 import org.testng.annotations.BeforeMethod;
 

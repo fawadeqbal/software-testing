@@ -67,13 +67,43 @@ public class ConfigHelper {
 
 
 
+    public String getStudentUsername() {
+        return _configs.get("STUDENT_USERNAME");
+    }
     public String getStudentPassword() {
         return _configs.get("STUDENT_PASSWORD");
     }
 
-    public String getStudentUsername() {
-        return _configs.get("STUDENT_USERNAME");
+    public String getTeacherUsername() {
+        return _configs.get("TEACHER_USERNAME");
     }
+
+    public String getTeacherPassword() {
+        return _configs.get("TEACHER_PASSWORD");
+    }
+
+    public String getNewUserFirstName() {
+        return _configs.get("USER_FIRSTNAME");
+    }
+
+    public String getNewUserLastName() {
+        return _configs.get("USER_LASTNAME");
+    }
+
+    public String getNewUserUsername() {
+        return _configs.get("USER_USERNAME");
+    }
+
+    public String getNewUserPassword() {
+        return _configs.get("USER_PASSWORD");
+    }
+
+    public String getNewUserEmail() {
+        return _configs.get("USER_EMAIL");
+    }
+
+
+
 
     public String getNonSystemUserCustomerName() {
         return _configs.get("NON_SYSTEM_USER_ENTERPRISE_CUSTOMER_NAME");

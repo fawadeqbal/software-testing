@@ -3,15 +3,17 @@ package com.se.utils;
 import com.github.javafaker.Faker;
 import com.se.TestDriver;
 import com.se.config.Constants;
+
 import io.qameta.allure.Step;
 
 import java.util.AbstractMap;
 import java.util.stream.Stream;
 
 import static com.se.utils.UtilsSet.*;
+import com.se.config.LoginParameters;
 
 public class LoginUtil {
-    public static void login(Constants.LoginParameters loginParameters) {
+    public static void login(LoginParameters loginParameters) {
         var roleToSelect = loginParameters.getHasMoreThanOneRole()
                 ? loginParameters.getRole()
                 : null;
@@ -65,13 +67,13 @@ public class LoginUtil {
     }
 
     @Step
-    public static void goToLoginPage(Constants.LoginParameters loginParameters) {
+    public static void goToLoginPage(LoginParameters loginParameters) {
         goToUrl(loginParameters.getUrl());
     }
 
     @Step
     public static void logoutAndLoginToDifferentUser(
-            Constants.LoginParameters enterprise,
+            LoginParameters enterprise,
             String username,
             String password
     ) {
@@ -79,6 +81,7 @@ public class LoginUtil {
         TestDriver.tearDown();
         login(username, password);
     }
+
     @Step
     public static void selectRole(Constants.Role role) {
        // waitForElementToBeVisible(role.getRoleName());
@@ -92,7 +95,7 @@ public class LoginUtil {
         clickOnElement(role.getRoleBy());
     }
 
-    public static void loginInSwagger(Constants.LoginParameters loginParameters) {
+    public static void loginInSwagger(LoginParameters loginParameters) {
         clearAndSetElementText(Constants.Swagger.Login.BY_ROLE_ID, "" + loginParameters.getRole().getRoleId());
         clearAndSetElementText(Constants.Swagger.Login.BY_USER_NAME, loginParameters.getUsername());
         clearAndSetElementText(Constants.Swagger.Login.BY_USER_PASSWORD, loginParameters.getPassword());
@@ -100,7 +103,7 @@ public class LoginUtil {
     }
 
     @Step
-    public static void logoutAndLoginWithDifferentEnterprise(Constants.LoginParameters loginParameters) {
+    public static void logoutAndLoginWithDifferentEnterprise(LoginParameters loginParameters) {
         LoginUtil.logout();
         waitForElementToBeVisible(Constants.Login.BY_USERNAME_FIELD,5);
         LoginUtil.login(loginParameters);

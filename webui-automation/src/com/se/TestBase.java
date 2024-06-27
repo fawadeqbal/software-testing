@@ -3,7 +3,10 @@ package com.se;
 import com.se.api.ApiHelper;
 import com.se.config.ConfigHelper;
 import com.se.config.Constants;
+import com.se.config.LoginParameters;
+import com.se.config.SignupParameters;
 import com.se.utils.LoginUtil;
+import com.se.utils.SignupUtil;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.apache.commons.lang3.exception.ExceptionUtils;
@@ -52,17 +55,22 @@ public abstract class TestBase {
     }
 
     @Step
-    public static void launchSubjectExpertAndLogin(Constants.LoginParameters loginParameters) {
+    public static void launchSubjectExpertAndLogin(LoginParameters loginParameters) {
         launchBrowserAndLogin(loginParameters);
     }
 
     @Step
-    public static void launchBrowserAndLogin(
-            Constants.LoginParameters loginParameters
+    public static void launchSubjectExpertAndSignup(SignupParameters signupParameters) {
+        launchBrowserAndSignup(signupParameters);
+    }
+
+    @Step
+    public static void launchBrowserAndSignup(
+            SignupParameters signupParameters
     ) {
         try {
-            launchBrowserAndUrl(loginParameters.getUrl(),Constants.Tags.BY_BODY);
-            LoginUtil.login(loginParameters);
+            launchBrowserAndUrl(signupParameters.getUrl(),Constants.Tags.BY_BODY);
+            SignupUtil.signUp(signupParameters);
         } catch (Exception | AssertionError ex) {
             System.out.println("Failed to log in, will attempt again");
             ex.printStackTrace();
@@ -71,8 +79,27 @@ public abstract class TestBase {
             // Tear down and try again to handle the case where the browser session gets messed up
             TestDriver.tearDown();
 
-            launchBrowserAndUrl(loginParameters.getUrl(),Constants.Login.BY_LOGIN_BUTTON);
-            LoginUtil.login(loginParameters);
+            launchBrowserAndUrl(signupParameters.getUrl(),Constants.Tags.BY_BODY);
+            SignupUtil.signUp(signupParameters);
+        }
+    }
+    @Step
+    public static void launchBrowserAndLogin(
+            LoginParameters signupParameters
+    ) {
+        try {
+            launchBrowserAndUrl(signupParameters.getUrl(),Constants.Tags.BY_BODY);
+            LoginUtil.login(signupParameters);
+        } catch (Exception | AssertionError ex) {
+            System.out.println("Failed to log in, will attempt again");
+            ex.printStackTrace();
+            Allure.addAttachment("Initial login failure stack", "text/plain", ExceptionUtils.getStackTrace(ex));
+
+            // Tear down and try again to handle the case where the browser session gets messed up
+            TestDriver.tearDown();
+
+            launchBrowserAndUrl(signupParameters.getUrl(),Constants.Tags.BY_BODY);
+            LoginUtil.login(signupParameters);
         }
     }
 }
