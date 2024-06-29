@@ -13,10 +13,10 @@ public class Constants {
     }
     public static class gmail {
         public static By BY_email= By.id("identifierId");
-        public static String useremail = "SIGNUPAUTOMATION1@gmail.com";
+        public static String useremail = "fawadeqbal@gmail.com";
         public static By BY_unext_button= By.cssSelector(".VfPpkd-LgbsSe-OWXEXe-k8QpJ > .VfPpkd-vQzf8d");
         public static By BY_password= By.xpath("//input[@type='password']");
-        public static String userpassword = "Subexpert1@signup";
+        public static String userpassword = "fawad321";
         public static By BY_pnext_button= By.cssSelector(".VfPpkd-LgbsSe-OWXEXe-k8QpJ > .VfPpkd-vQzf8d");
         public static By BY_mailmessage= By.cssSelector("#\\3A 2a .yP");
         public static By BY_verfication_link= By.xpath("//a[contains(text(),'Activate My Account')]");
@@ -56,6 +56,12 @@ public class Constants {
         public static By By_submit_Button= By.xpath("//*[@id=\"frmRegister\"]/div[3]/div/p/input");
         public static By By_Check_Button= By.xpath("//*[@id=\"recaptcha-anchor\"]/div[1]");
     }
+    public static class Dashboard{
+        public static By By_skip_now=By.xpath("//*[@id=\"startDiv\"]/div/p/input[2]");
+        public static By By_role=By.xpath("//*[@id=\"currentRole\"]");
+        public static By By_Student_Number_of_courses=By.xpath("/html/body/div[4]/div[3]/div[1]/div/div[3]/div/div[2]/div/div[1]/div[2]/div[1]/div/a[1]/span");
+
+    }
 
 
     public static class Tags {
@@ -84,9 +90,9 @@ public class Constants {
 
 
     public enum Role {
-        STUDENT(1, "Student", "dashboard"),
-        TEACHER(2, "Teacher", "dashboard"),
-        ADMIN(3, "Admin", "dashboard");
+        STUDENT(1, "STUDENT", "dashboard"),
+        TEACHER(2, "TEACHER", "dashboard"),
+        ADMIN(3, "ADMIN", "dashboard");
 
         private final int _roleId;
         private final String _roleName;

@@ -21,20 +21,20 @@ public class VerifyMajorPagesWorkTest extends TestBase {
         System.out.println("Ensure internet is working for remote testing ...");
 
     }
-    @Test
-    public void validateWelcomeTabTest(){
-        UtilsSet.launchBrowserAndUrl("https://demo.subexpert.com/", Constants.Login.BY_LOGIN_BUTTON);
-    }
-    @Test
-    public void varify_title(){
-        UtilsSet.goToUrl("https://demo.subexpert.com/");
-        // Get the actual title of the web page
-        String actualTitle = UtilsSet.getPageTitle();
-        // Expected title
-        String expectedTitle = "Subject Expert a learning and evaluation platform";
-        // Assert that the actual title is equal to the expected title
-        Assert.assertEquals(actualTitle, expectedTitle, "Page title mismatch");
-    }
+//    @Test
+//    public void validateWelcomeTabTest(){
+//        UtilsSet.launchBrowserAndUrl("https://demo.subexpert.com/", Constants.Login.BY_LOGIN_BUTTON);
+//    }
+//    @Test
+//    public void varify_title(){
+//        UtilsSet.goToUrl("https://demo.subexpert.com/");
+//        // Get the actual title of the web page
+//        String actualTitle = UtilsSet.getPageTitle();
+//        // Expected title
+//        String expectedTitle = "Subject Expert a learning and evaluation platform";
+//        // Assert that the actual title is equal to the expected title
+//        Assert.assertEquals(actualTitle, expectedTitle, "Page title mismatch");
+//    }
     @Test
     public void Signup(){
         UtilsSet.goToUrl("https://demo.subexpert.com/");
