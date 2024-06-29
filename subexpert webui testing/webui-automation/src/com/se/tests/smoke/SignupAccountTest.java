@@ -6,7 +6,6 @@ import com.se.utils.SignupUtil;
 import org.testng.annotations.Test;
 
 
-import static com.se.TestBase.launchSubjectExpertAndSignup;
 import static com.se.utils.UtilsSet.launchBrowserAndUrl;
 
 public class SignupAccountTest  {

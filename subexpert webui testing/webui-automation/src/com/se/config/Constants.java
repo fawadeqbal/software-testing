@@ -59,7 +59,9 @@ public class Constants {
     public static class Dashboard{
         public static By By_skip_now=By.xpath("//*[@id=\"startDiv\"]/div/p/input[2]");
         public static By By_role=By.xpath("//*[@id=\"currentRole\"]");
+
         public static By By_Student_Number_of_courses=By.xpath("/html/body/div[4]/div[3]/div[1]/div/div[3]/div/div[2]/div/div[1]/div[2]/div[1]/div/a[1]/span");
+        public static By By_Teacher_Number_of_courses=By.xpath("/html/body/div[4]/div[3]/div[1]/div/div[3]/div/div[2]/div/div[1]/div[2]/a[1]/span");
 
     }
 
