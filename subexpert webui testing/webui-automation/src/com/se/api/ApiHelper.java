@@ -14,7 +14,6 @@ public class ApiHelper {
         if (_isDatabaseSetupPerformed) {
             return;
         }
-
         Unirest
                 .post(TEST_DATA_CONTROLLER_URL + "/setupdatabase")
                 .asEmpty();

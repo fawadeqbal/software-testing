@@ -22,7 +22,20 @@ public class Constants {
         public static By BY_verfication_link= By.xpath("//a[contains(text(),'Activate My Account')]");
 
     }
-
+    public static class yahoo {
+        public static By By_body=By.xpath("//*[@id=\"signin-main\"]");
+        public static By By_signin=By.xpath("/html/body/div[1]/a");
+        public static By BY_username= By.xpath("//*[@id=\"login-username\"]");
+        public static String useremail ="";
+        public static By BY_next_button= By.xpath("//*[@id=\"login-signin\"]");
+        public static By BY_password= By.xpath("//*[@id=\"login-passwd\"]");
+        public static String userpassword = "";
+        public static By BY_pnext_button= By.xpath("//*[@id=\"login-signin\"]");
+        public static By BY_search= By.xpath("/html/body/header/div/div/div[3]/div/div[2]/div/div/div/div[1]/ul/li/div/div/input[1]");
+       public static String inputSearch="subexpert";
+        public static By BY_search_button= By.xpath("//a[contains(text(),'Activate My Account')]");
+        public static By By_email_click=By.xpath("/html/body/div[2]/div/div[1]/div/div[2]/div/div[2]/div[1]/div[1]/div/div/div[3]/div/div/div[4]/div/div[1]/ul/li[3]/a/div/div[3]/div[1]/div[1]/span[1]");
+    }
 
     public static final LoginParameters STUDENT_LOGIN_DETAILS = new LoginParameters.Builder()
             .role(Role.STUDENT)
@@ -36,6 +49,11 @@ public class Constants {
             .password(ConfigHelper.getInstance().getTeacherPassword())
             .username(ConfigHelper.getInstance().getTeacherUsername())
             .build();
+    public static final PasswordRecoveryParameters PASSWORD_RECOVERY_DETAILS = new PasswordRecoveryParameters.Builder()
+            .setUrl(ConfigHelper.getInstance().getSubjectExpertUrl())
+            .setEmail(ConfigHelper.getInstance().getRecoveryEmail())
+            .build();
+
     public static final SignupParameters USER_SIGNUP_DETAILS = new SignupParameters.Builder()
             .getUrl(ConfigHelper.getInstance().getSubjectExpertUrl())
             .password(ConfigHelper.getInstance().getNewUserPassword())
@@ -44,6 +62,15 @@ public class Constants {
             .firstName(ConfigHelper.getInstance().getNewUserFirstName())
             .lastName(ConfigHelper.getInstance().getNewUserLastName())
             .build();
+
+    public static class PasswordRecovery{
+        public static By By_Forgot_Password_Button= By.xpath("/html/body/div[4]/div[3]/div/div/form/p[3]/a[1]");
+        public static By By_email=By.xpath("//*[@id=\"Email\"]");
+        public static By By_request_credentials=By.xpath("/html/body/div[4]/div[3]/div/div/form/input");
+
+        public static By By_success_label=By.xpath("/html/body/div[4]/div[3]/div/div/form/div[1]/div/h4");
+
+    }
 
     public static class Signup {
         public static By BY_Signup_button= By.xpath("//*[@id=\"header\"]/div[2]/div//div[2]/div[1]/span[2]");
@@ -74,6 +101,7 @@ public class Constants {
 
     public static class Login {
 
+        public static final By BY_LOG_OFF = By.xpath("/html/body/div[1]/div[2]/div/div/div[2]/div[1]/form/a");
         public static final By BY_USERNAME_FIELD = By.id("UserName");
         public static final By BY_PASSWORD_FIELD = By.id("Password");
         public static final By BY_LOGIN_BUTTON = By.xpath("//*[@id='body']/div/div/form/div[2]/input[2]");

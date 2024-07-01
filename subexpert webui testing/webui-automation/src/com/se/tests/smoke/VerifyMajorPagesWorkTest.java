@@ -12,6 +12,9 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.AbstractMap;
+import java.util.stream.Stream;
+
 import static com.se.utils.UtilsSet.*;
 
 // SE001
@@ -81,4 +84,17 @@ public class VerifyMajorPagesWorkTest extends TestBase {
 //        Assert.assertTrue(element.isDisplayed());
 //
 //    }
+        @Test
+    public void yahoo() throws InterruptedException  {
+        launchBrowserAndUrl("https://mail.yahoo.com/",Constants.yahoo.By_body);
+        clickOnElement(Constants.yahoo.By_signin);
+        clearAndSetElementText(Constants.yahoo.BY_username, Constants.yahoo.useremail);
+        clickOnElement(Constants.yahoo.BY_next_button);
+        clearAndSetElementText(Constants.yahoo.BY_password, Constants.yahoo.userpassword);
+        clickOnElement(Constants.yahoo.BY_pnext_button);
+        clearAndSetElementText(Constants.yahoo.BY_search,Constants.yahoo.inputSearch);
+        clickOnElement(Constants.yahoo.BY_search_button);
+        clickOnElement(Constants.yahoo.By_email_click);
+//        Assert.assertTrue(element.isDisplayed());
+    }
 }

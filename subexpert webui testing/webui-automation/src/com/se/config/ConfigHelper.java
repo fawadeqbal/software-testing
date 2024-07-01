@@ -102,9 +102,9 @@ public class ConfigHelper {
         return _configs.get("USER_EMAIL");
     }
 
-
-
-
+    public String getRecoveryEmail() {
+        return _configs.get("RECOVERY_EMAIL");
+    }
     public String getNonSystemUserCustomerName() {
         return _configs.get("NON_SYSTEM_USER_ENTERPRISE_CUSTOMER_NAME");
     }
