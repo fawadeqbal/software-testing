@@ -26,15 +26,14 @@ public class Constants {
         public static By By_body=By.xpath("//*[@id=\"signin-main\"]");
         public static By By_signin=By.xpath("/html/body/div[1]/a");
         public static By BY_username= By.xpath("//*[@id=\"login-username\"]");
-        public static String useremail ="";
         public static By BY_next_button= By.xpath("//*[@id=\"login-signin\"]");
         public static By BY_password= By.xpath("//*[@id=\"login-passwd\"]");
-        public static String userpassword = "";
         public static By BY_pnext_button= By.xpath("//*[@id=\"login-signin\"]");
         public static By BY_search= By.xpath("/html/body/header/div/div/div[3]/div/div[2]/div/div/div/div[1]/ul/li/div/div/input[1]");
        public static String inputSearch="subexpert";
-        public static By BY_search_button= By.xpath("//a[contains(text(),'Activate My Account')]");
+        public static By BY_search_button= By.xpath("//*[@id=\"mail-search\"]/div/button");
         public static By By_email_click=By.xpath("/html/body/div[2]/div/div[1]/div/div[2]/div/div[2]/div[1]/div[1]/div/div/div[3]/div/div/div[4]/div/div[1]/ul/li[3]/a/div/div[3]/div[1]/div[1]/span[1]");
+        public static By By_email_body_password=By.xpath("/html/body/div[2]/div/div[1]/div/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div[2]/ul/li/div/div[2]/div[1]/div[2]/div/div/div/div/blockquote/b[2]");
     }
 
     public static final LoginParameters STUDENT_LOGIN_DETAILS = new LoginParameters.Builder()

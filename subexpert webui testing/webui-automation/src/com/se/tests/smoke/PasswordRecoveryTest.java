@@ -34,22 +34,7 @@ public class PasswordRecoveryTest extends PasswordRecoveryBase {
                     clearTextArea(entry.getKey());
                 });
         clickOnElement(Constants.PasswordRecovery.By_request_credentials);
-        Stream.of(
-                        new AbstractMap.SimpleEntry<>(Constants.yahoo.BY_password,Constants.yahoo.userpassword)
-                )
-                .forEach(entry -> {
-                    if (entry.getValue() != null) {
-                        clearAndSetElementText(entry.getKey(), entry.getValue());
-                        return;
-                    }
 
-                    // Trigger the "field required" message
-                    sendTextToElement(
-                            entry.getKey(),
-                            Faker.instance().lorem().characters()
-                    );
-                    clearTextArea(entry.getKey());
-                });
         Assert.assertEquals("Success!",getElementText(Constants.PasswordRecovery.By_success_label));
     }
 }

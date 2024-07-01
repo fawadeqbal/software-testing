@@ -2,6 +2,7 @@ package com.se.tests.smoke;
 
 import com.github.javafaker.Faker;
 import com.se.TestBase;
+import com.se.config.ConfigHelper;
 import com.se.data.DataGenerator;
 import com.se.utils.NavigationUtil;
 import com.se.config.Constants;
@@ -88,13 +89,15 @@ public class VerifyMajorPagesWorkTest extends TestBase {
     public void yahoo() throws InterruptedException  {
         launchBrowserAndUrl("https://mail.yahoo.com/",Constants.yahoo.By_body);
         clickOnElement(Constants.yahoo.By_signin);
-        clearAndSetElementText(Constants.yahoo.BY_username, Constants.yahoo.useremail);
+        clearAndSetElementText(Constants.yahoo.BY_username, ConfigHelper.getInstance().getYahooUsername());
         clickOnElement(Constants.yahoo.BY_next_button);
-        clearAndSetElementText(Constants.yahoo.BY_password, Constants.yahoo.userpassword);
+        clearAndSetElementText(Constants.yahoo.BY_password, ConfigHelper.getInstance().getYahooPassword());
         clickOnElement(Constants.yahoo.BY_pnext_button);
         clearAndSetElementText(Constants.yahoo.BY_search,Constants.yahoo.inputSearch);
         clickOnElement(Constants.yahoo.BY_search_button);
         clickOnElement(Constants.yahoo.By_email_click);
+        String password=getElementText(Constants.yahoo.By_email_body_password);
+        Assert.assertEquals(password,"fawad0");
 //        Assert.assertTrue(element.isDisplayed());
     }
 }
