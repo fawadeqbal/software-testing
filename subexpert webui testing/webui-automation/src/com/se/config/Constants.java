@@ -13,10 +13,10 @@ public class Constants {
     }
     public static class gmail {
         public static By BY_email= By.id("identifierId");
-        public static String useremail = "fawadeqbal@gmail.com";
+
         public static By BY_unext_button= By.cssSelector(".VfPpkd-LgbsSe-OWXEXe-k8QpJ > .VfPpkd-vQzf8d");
         public static By BY_password= By.xpath("//input[@type='password']");
-        public static String userpassword = "fawad321";
+       
         public static By BY_pnext_button= By.cssSelector(".VfPpkd-LgbsSe-OWXEXe-k8QpJ > .VfPpkd-vQzf8d");
         public static By BY_mailmessage= By.cssSelector("#\\3A 2a .yP");
         public static By BY_verfication_link= By.xpath("//a[contains(text(),'Activate My Account')]");
