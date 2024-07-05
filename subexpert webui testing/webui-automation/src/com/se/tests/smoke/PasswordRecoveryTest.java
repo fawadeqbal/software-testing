@@ -14,7 +14,7 @@ import static com.se.utils.UtilsSet.*;
 public class PasswordRecoveryTest extends PasswordRecoveryBase {
     @Test
     public void verifyPasswordRecovery(){
-        clickOnElement(Constants.Login.BY_LOG_OFF);
+//        clickOnElement(Constants.Login.BY_LOG_OFF);
         clickOnElement(Constants.Login.BY_login);
         clickOnElementOnceClickable(Constants.PasswordRecovery.By_Forgot_Password_Button);
         Stream.of(
