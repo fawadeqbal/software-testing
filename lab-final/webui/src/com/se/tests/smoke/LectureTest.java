@@ -29,7 +29,9 @@ public class LectureTest extends StudentLoginBase
     @Test
     public void verifyLectureTaskStatus() throws InterruptedException {
         clickOnElement(Constants.Lecture.By_learn_btn);
+        Thread.sleep(2000 );
         clickOnElement(Constants.Lecture.By_course_btn);
+        Thread.sleep(2000 );
         clickOnElement(Constants.Lecture.By_lectures_btn);
         Thread.sleep(2000 );
         clickOnElement(Constants.Lecture.By_lecture_introduction_btn);
